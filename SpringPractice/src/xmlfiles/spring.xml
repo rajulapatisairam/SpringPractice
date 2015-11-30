@@ -4,4 +4,46 @@
 <beans>
 <bean class="com.spring.practice.pojos.Test" id="test" scope="prototype" ></bean>
 <bean class="com.spring.practice.pojos.Test2" id="t2" scope="singleton" ></bean>
+<bean class="com.spring.practice.pojos.Pojo" id="pojo" scope="prototype">
+ <constructor-arg value="123" type="int" index="1"/>
+ <constructor-arg value="rajulapatisairam@gmail.com" index="2"/>
+ <constructor-arg value="sairam rajulapati" index="0" />
+ 
+	</bean>
+	<bean id="maruthiCarEnginee" class="com.spring.practice.pojos.Enginee" scope="prototype">
+	<property name="engineeName" value="Suzuki"/>
+	<property name="capacity" value="1000 Horse Power"/>	
+	</bean>
+	
+	<bean id="zenCarEnginee" class="com.spring.practice.pojos.Enginee" scope="prototype">
+	<property name="engineeName" value="KawaSaki"/>
+	<property name="capacity" value="1330 Horse Power"/>
+	</bean>
+	
+	<bean id="maruthi" class="com.spring.practice.pojos.Car">
+	<property name="enginee" ref="maruthiCarEnginee"/>
+	<property name="carName"  value="Swift Dezire"/>
+	</bean>
+	
+	<bean id="MaruthiCompany" class="com.spring.practice.pojos.Maruthi">
+	<property name="models" >
+	
+	<list>
+	<value> Swift</value>
+	<value> Waganor</value>
+	<value> Claz </value>
+	<value> zen</value>
+	<value> Alto </value>
+	<value> Ethios </value>
+	</list>
+	</property>
+	<property name="enginees">
+		<list>
+		<ref bean="maruthiCarEnginee"/>		 
+		<ref bean="zenCarEnginee"/>
+		</list>
+	
+	</property>
+	</bean>
+
 </beans>
