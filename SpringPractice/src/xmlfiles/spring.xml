@@ -15,7 +15,7 @@
 	<property name="capacity" value="1000 Horse Power"/>	
 	</bean>
 	
-	<bean id="zenCarEnginee" class="com.spring.practice.pojos.Enginee" scope="prototype">
+	<bean id="zenCarEnginee" class="com.spring.practice.pojos.Enginee" scope="prototype"  >
 	<property name="engineeName" value="KawaSaki"/>
 	<property name="capacity" value="1330 Horse Power"/>
 	</bean>
@@ -38,11 +38,37 @@
 	</list>
 	</property>
 	<property name="enginees">
+	
 		<list>
 		<ref bean="maruthiCarEnginee"/>		 
 		<ref bean="zenCarEnginee"/>
 		</list>
 	
+	</property>
+	</bean>
+	<bean id="collectionsClass" class="com.spring.practice.pojos.CollectionsPojo">
+	<property name="names">
+	<set>
+	<value>Sairam</value>
+	<value>Jaggu</value>
+	<value>Naren</value>
+	<value>Nagaraj</value>
+	<value>Sairam</value>
+	</set>
+	</property>
+	<property name="course">
+	<list>
+	<value> C</value>
+	<value> C++</value>
+	<value> Java</value>
+	</list>
+	</property>	
+	<property name="relations">
+	<map>
+	<entry key="course" value="java"/>
+	<entry key="subject" value="java"/>
+	
+	</map>
 	</property>
 	</bean>
 

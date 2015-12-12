@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+    
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" id="beanPostProcessor"/>
+<bean id="autoWiringClass" class="com.spring.practice.pojos.autowiring.Autowirepojo"/>
+
+<bean id="pojo1" class="com.spring.practice.pojos.autowiring.DepencyPojo1"/>
+<bean id="dp3" class="com.spring.practice.pojos.autowiring.DepencyPojo1" autowire-candidate="false"/>
+<bean id="pojo11" class="com.spring.practice.pojos.autowiring.DepencyPojo1" autowire-candidate="false"/>
+<bean id="pojo2" class="com.spring.practice.pojos.autowiring.DepencyPojo2"/>
+
+
+</beans>

@@ -1,5 +1,7 @@
 package com.spring.practice;
 
+import java.util.Map.Entry;
+
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
@@ -7,6 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 import com.spring.practice.pojos.Car;
+import com.spring.practice.pojos.CollectionsPojo;
 import com.spring.practice.pojos.Enginee;
 import com.spring.practice.pojos.Maruthi;
 import com.spring.practice.pojos.Pojo;
@@ -28,8 +31,23 @@ public class HelloSpring {
 		//applicationContextListener();
 		//passParametersToPojo();
 		//passRefferencessToClass();
-		primativeAndSecondayTypeArray();
+		//primativeAndSecondayTypeArray();
+		checkCollections();
 		
+	}
+		private void checkCollections() {
+			ApplicationContext context = new ClassPathXmlApplicationContext(LOCATION);
+			CollectionsPojo pojo = context.getBean(CollectionsPojo.class);
+			for( String name : pojo.getNames()){
+				System.out.println("\n Name is: "+name);
+			}
+			
+			for( String course : pojo.getCourse()){
+				System.out.println(" Course is : "+course);
+			}
+			for (Entry<String, String> relation:   pojo.getRelations().entrySet()){
+				System.out.println(" Key : "+relation.getKey()+" Value is : "+relation.getValue());
+			}
 	}
 		private void primativeAndSecondayTypeArray() {
 			ApplicationContext context = new ClassPathXmlApplicationContext(LOCATION);
