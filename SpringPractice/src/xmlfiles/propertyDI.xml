@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<!--  Loading properties files into IOC context scope -->
+<bean id="pdi" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="resources/DBProperties.properties"></property>
+</bean>
+<bean id="propertyDependency" class="com.spring.practice.propertys.PropertyDependencyInjection">
+<property name="url" value="${url}"></property>
+<property name="driver" value="${driver}"></property>
+<property name="uname" value="${uname}"></property>
+<property name="password" value="${password}"></property>
+</bean>
+</beans>

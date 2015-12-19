@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="carEnginee" class="com.spring.practice.lookup.CareEngine" >
+<lookup-method name="myEnginee" bean="swiftEnginee"/>
+ </bean>
+ <bean id="swiftEnginee" class="com.spring.practice.lookup.Enginee">
+ <property name="engineName" value="Swift Dezier"/>
+ <property name="model" value="2015"></property>
+ </bean>
+ 
+ <!--  Abstract Class LookUp Method  -->
+ 
+ <bean id="busEnginee" class="com.spring.practice.lookup.BusAbstractClass" >
+<lookup-method name="busEnginee" bean="eicher"/>
+ </bean>
+ <bean id="eicher" class="com.spring.practice.lookup.Enginee" >
+ <property name="engineName" value="Eicher SUper Power"/>
+ <property name="model" value="2017"></property>
+ </bean>
+
+<!--  Concreate Class Look Up  -->
+
+ <bean id="TruckEnginee" class="com.spring.practice.lookup.ConcreateClass" >
+<lookup-method name="myEnginee" bean="benz"/>
+ </bean>
+ <bean id="benz" class="com.spring.practice.lookup.Enginee">
+ <property name="engineName" value="Benz Tupper "/>
+ <property name="model" value="2019"></property>
+ </bean>
+</beans>
